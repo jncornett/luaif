@@ -153,7 +153,7 @@ template<typename T>
 T* Instance<T>::get(lua_State* L)
 {
     int up = lua_upvalueindex(SELF_UPVALUEINDEX);
-    return check_userdata<T>(L, up, name);
+    return *check_userdata<T>(L, up, name);
 }
 
 }
